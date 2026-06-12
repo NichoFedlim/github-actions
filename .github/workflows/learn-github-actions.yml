@@ -1,0 +1,24 @@
+# .github/workflows/learn-github-actions.yml
+name: My First Workflow
+on: 
+  push:
+    branches: [ "main" ]
+  # Allows you to manually trigger the workflow from GitHub's UI
+  workflow_dispatch: 
+
+jobs:
+  checkout-job:
+    name: My First Job
+    runs-on: ubuntu-latest
+    steps:
+      # This is a publicly available action that checks out your code
+      - name: Check out repository code
+        uses: actions/checkout@v6
+
+      - name: List files in the repository
+        run: |
+          echo "The repository has been cloned to the runner."
+          ls -la ${{ github.workspace }}
+      
+      - name: Print a greeting using variables
+        run: echo "Hello, ${{ github.actor }}! This workflow is running on ${{ runner.os }}."
