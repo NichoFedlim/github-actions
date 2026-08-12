@@ -1,2 +1,2 @@
 # github-actions
-Learning how to build github actions, and try other things. V1
+Learning how to build github actions, and try other things. V2
